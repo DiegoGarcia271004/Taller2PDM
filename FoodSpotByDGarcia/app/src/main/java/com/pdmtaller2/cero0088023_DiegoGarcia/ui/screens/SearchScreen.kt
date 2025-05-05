@@ -57,6 +57,10 @@ fun SearchPage(
                 category.contains(query, ignoreCase = true)
             }
         }
+    }.ifEmpty {
+        restaurants.filter { restaurant ->
+            restaurant.name.contains(query, ignoreCase = true)
+        }
     }
 
     Scaffold(
